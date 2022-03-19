@@ -2,7 +2,7 @@
 #	include <hk_math/math_ps2.inl>
 #else	//HK_PS2
 
-#ifdef _WIN32
+#if 0
 inline hk_double hk_Math::fabsd( hk_double r ) { return hk_double(::fabs(r)); }
 
 inline hk_real hk_Math::sqrt( hk_real r) { return hk_real(::sqrt(r)); }
@@ -26,8 +26,7 @@ inline hk_real hk_Math::exp( hk_real e) { return hk_real(::exp(e)); }
 inline hk_real hk_Math::floor( hk_real r ) { return hk_real(::floor(r)); }
 inline hk_real hk_Math::ceil( hk_real r) { return hk_real(::ceil(r)); }
 inline hk_real hk_Math::pow( hk_real r, hk_real p) { return hk_real(::pow(r,p)); }
-
-#elif _LINUX
+#endif
 
 namespace c_math
 {
@@ -71,7 +70,6 @@ inline hk_real hk_Math::exp( hk_real e) { return hk_real(c_math::exp(e)); }
 inline hk_real hk_Math::floor( hk_real r ) { return hk_real(c_math::floor(r)); }
 inline hk_real hk_Math::ceil( hk_real r) { return hk_real(c_math::ceil(r)); }
 inline hk_real hk_Math::pow( hk_real r, hk_real p) { return hk_real(c_math::pow(r,p)); }
-#endif
 
 inline hk_real hk_Math::clamp( hk_real r, hk_real mn, hk_real mx)
 {
